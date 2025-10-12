@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  # O único serviço necessário é o da sua aplicação
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    # Este é o passo mais importante para o SQLite:
+    # Mapeia uma pasta local chamada 'data' para o diretório de trabalho /app do container.
+    # Quando a aplicação criar o arquivo 'curser.db', ele será salvo na pasta 'data'
+    # no seu computador, persistindo os dados.
+    volumes:
+      - ./data:/app
