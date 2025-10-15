@@ -29,4 +29,9 @@ public class UsuarioController {
     public List<UsuarioResponse> listarUsuarios() {
         return usuarioService.listar();
     }
+
+    @DeleteMapping("/{id}")
+    public void remover(@PathVariable Long id) {
+        usuarioService.remover(id);
+    } 
 }

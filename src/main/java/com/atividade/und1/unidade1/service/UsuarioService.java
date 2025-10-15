@@ -32,4 +32,8 @@ public class UsuarioService {
                 .map(UsuarioMapper::toResponse)
                 .collect(Collectors.toList());
     }
+
+    public void remover(Long id) {
+        usuarioRepository.deleteById(id);
+    }
 }

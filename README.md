@@ -56,6 +56,7 @@ O servidor está ativo, mas só responde nos caminhos definidos, como `/usuarios
 |--------|-----------|-------------------------------------|
 | GET    | /usuarios | Lista todos os usuários cadastrados. |
 | POST   | /usuarios | Cadastra um novo usuário no banco de dados. |
+| DELETE   | /usuarios/{id} | Deleta um  usuário no banco de dados. |
 
 ### Como Cadastrar e Listar Usuários
 
