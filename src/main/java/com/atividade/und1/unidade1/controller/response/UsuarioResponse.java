@@ -1,4 +1,5 @@
-package br.com.atividade.und1.controller.response;
+package com.atividade.und1.unidade1.controller.response;
+
 
 import lombok.*;
 

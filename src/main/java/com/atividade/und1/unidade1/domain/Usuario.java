@@ -1,17 +1,18 @@
-package br.com.atividade.und1.domain;
+package com.atividade.und1.unidade1.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDate;
 
-
-@AllArgsConstructor @NoArgsConstructor
-@Getter @Setter
 @Entity
+@Getter
+@Setter
+@EqualsAndHashCode(of = "id")
+@ToString(of = "id")
 public class Usuario {
 
     @Id
@@ -29,5 +30,4 @@ public class Usuario {
 
     @Column(length = 128, nullable = false)
     private String senha;
-
 }

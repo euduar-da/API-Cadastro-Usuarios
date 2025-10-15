@@ -1,12 +1,10 @@
-package br.com.atividade.und1.mapper;
+package com.atividade.und1.unidade1.mapper;
 
-import br.com.atividade.und1.controller.request.UsuarioRequest;
-import br.com.atividade.und1.controller.response.UsuarioResponse;
-import br.com.atividade.und1.domain.Usuario;
+import com.atividade.und1.unidade1.controller.request.UsuarioRequest;
+import com.atividade.und1.unidade1.controller.response.UsuarioResponse;
+import com.atividade.und1.unidade1.domain.Usuario;
 
 public class UsuarioMapper {
-
-
     public static Usuario toEntity(UsuarioRequest request) {
         if (request == null) {
             return null;
@@ -15,7 +13,7 @@ public class UsuarioMapper {
         entity.setNomeCompleto(request.getNomeCompleto());
         entity.setEmail(request.getEmail());
         entity.setDataNascimento(request.getDataNascimento());
-        entity.setSenha(request.getSenha());
+        entity.setSenha(request.getSenha()); // senha sem encode
         return entity;
     }
 
@@ -31,5 +29,3 @@ public class UsuarioMapper {
                 .build();
     }
 }
-
-

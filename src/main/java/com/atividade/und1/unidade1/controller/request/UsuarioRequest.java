@@ -1,9 +1,8 @@
-package br.com.atividade.und1.controller.request;
+package com.atividade.und1.unidade1.controller.request;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,10 +18,11 @@ public class UsuarioRequest {
     @Email
     private String email;
 
+
+
     @NotNull
     private LocalDate dataNascimento;
 
     @NotBlank
     private String senha;
-
 }
