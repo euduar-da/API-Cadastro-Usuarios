@@ -6,10 +6,9 @@ import com.atividade.und1.unidade1.repository.UsuarioRepository;
 import com.atividade.und1.unidade1.service.UsuarioService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @AllArgsConstructor
 @RestController
@@ -17,12 +16,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class UsuarioController {
 
     private final UsuarioRepository usuarioRepository;
-    private final UsuarioService incluirUsuarioService;
+    private final UsuarioService usuarioService;
 
 
 
     @PostMapping
     public UsuarioResponse incluir(@Valid @RequestBody UsuarioRequest request) {
-        return incluirUsuarioService.incluir(request);
+        return usuarioService.incluir(request);
+    }
+
+    @GetMapping
+    public List<UsuarioResponse> listarUsuarios() {
+        return usuarioService.listar();
     }
 }

@@ -7,6 +7,10 @@ import com.atividade.und1.unidade1.mapper.UsuarioMapper;
 import com.atividade.und1.unidade1.repository.UsuarioRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
 @AllArgsConstructor
 @Service
 public class UsuarioService {
@@ -20,5 +24,12 @@ public class UsuarioService {
         usuarioRepository.save(usuario);
 
         return UsuarioMapper.toResponse(usuario);
+    }
+
+    public List<UsuarioResponse> listar() {
+        return usuarioRepository.findAll()
+                .stream()
+                .map(UsuarioMapper::toResponse)
+                .collect(Collectors.toList());
     }
 }
